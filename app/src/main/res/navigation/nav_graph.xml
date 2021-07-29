@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MenuFragment">
+
+    <activity
+        android:id="@+id/AvailabilityActivity"
+        android:name="com.example.roomavaliabilityapp.RoomAvailabilityActivity"
+        tools:layout="@layout/activity_app">
+    </activity>
+
+    <fragment
+        android:id="@+id/RoomFragment"
+        android:name="com.example.roomavaliabilityapp.presentation.rooms.RoomFragment"
+        tools:layout="@layout/fragment_room" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/PeopleFragment"
+        android:name="com.example.roomavaliabilityapp.presentation.people.PeopleFragment"
+        tools:layout="@layout/fragment_people" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/MenuFragment"
+        android:name="com.example.roomavaliabilityapp.presentation.menu.MenuFragment"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_MenuFragment_to_RoomFragment"
+            app:destination="@id/RoomFragment" />
+        <action
+            android:id="@+id/action_MenuFragment_to_PeopleFragment"
+            app:destination="@id/PeopleFragment" />
+    </fragment>
+
+</navigation>
